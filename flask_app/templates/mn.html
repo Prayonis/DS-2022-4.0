@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Расчет соотношения матрица-наполнитель</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Tahoma;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        #header {
+            background-color: #fab700;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+            font-family: Tahoma;
+        }
+        
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        label {
+            font-size: 14px;
+            color: #C71585;
+            margin-bottom: 10px;
+            display: block;
+            font-family: Tahoma;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        
+        input[type="text"]:hover,
+        input[type="text"]:focus {
+            border: 1px solid #fab700;
+        }
+        
+        input[type="submit"] {
+            background-color: #fab700;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #ffca2c;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color:#fab700; font-family: tahoma;">Расчет соотношения матрица-наполнитель</h1>
+    <form action="" method="post">
+    <fieldset>
+    <strong><u> <legend style="color:#8B4513ab; font-family: tahoma; font-size: 7">Введите параметры</legend> </u></strong>
+    <p>
+        <input type="text" name="Плотность, кг/м3" required>
+		<label for="Плотность, кг/м3" style="color:#C71585; font-family: tahoma; font-size: 6">Плотность, кг/м3</label>
+    </p><p>
+        <input type="text" name="модуль упругости, ГПа" required>
+		<label for="модуль упругости, ГПа" style="color:#C71585; font-family: tahoma; font-size: 6">Модуль упругости, ГПа</label>
+    </p><p>
+        <input type="text" name="Количество отвердителя, м.%" required>
+		<label for="Количество отвердителя, м.%" style="color:#C71585; font-family: tahoma; font-size: 6">Количество отвердителя, м.%</label>
+    </p><p>
+        <input type="text" name="Содержание эпоксидных групп,%_2" required>
+        <label for="Содержание эпоксидных групп,%_2" style="color:#C71585; font-family: tahoma; font-size: 6">Содержание эпоксидных групп,%_2</label>
+    </p><p>
+        <input type="text" name="Температура вспышки, С_2" required>
+		<label for="Температура вспышки, С_2" style="color:#C71585; font-family: tahoma; font-size: 6">Температура вспышки, С_2</label>
+    </p><p>
+        <input type="text" name="Поверхностная плотность, г/м2	" required>
+		<label for="Поверхностная плотность, г/м2	" style="color:#C71585; font-family: tahoma; font-size: 6">Поверхностная плотность, г/м2</label>
+    </p><p>
+        <input type="text" name="Модуль упругости при растяжении, ГПа" required>
+		<label for="Модуль упругости при растяжении, ГПа" style="color:#C71585; font-family: tahoma; font-size: 6">Модуль упругости при растяжении, ГПа</label>
+    </p><p>
+        <input type="text" name="Прочность при растяжении, МПа" required>
+		<label for="Прочность при растяжении, МПа" style="color:#C71585; font-family: tahoma; font-size: 6">Прочность при растяжении, МПа</label>
+    </p><p>
+        <input type="text" name="Потребление смолы, г/м2" required>
+		<label for="Потребление смолы, г/м2" style="color:#C71585; font-family: tahoma; font-size: 6">Потребление смолы, г/м2</label>
+	    
+    </p><p>
+        <input type="text" name="Угол нашивки, град" min='0' max='90' step='1' required>
+		<label for="Угол нашивки, град" style="color:#C71585; font-family: tahoma; font-size: 6">Угол нашивки, град</label>
+    </p><p>
+        <input type="text" name="Шаг нашивки" required>
+		<label for="Шаг нашивки" style="color:#C71585; font-family: tahoma; font-size: 6">Шаг нашивки</label>
+    </p><p>
+        <input type="text" name="Плотность нашивки" required>
+		<label for="Плотность нашивки" style="color:#C71585; font-family: tahoma; font-size: 6">Плотность нашивки</label>
+	    
+	</p>
+    </fieldset>
+	<p>
+	    <strong><u><input style="color:#0047ab; font-family: tahoma; font-size: 7" type="submit" value="Рассчитать"></u></strong>
+        <input style="color:#0047ab; font-family: tahoma; font-size: 7" type="reset">
+	</p>
+    </form>
+    <p>
+    {% if message %}
+        <p><b><label style="color:#0047ab; font-family: tahoma; font-size: 7">{{message}}</b></p>
+    {% endif %}
+    </p>
+</body>
+</html>
